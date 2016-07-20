@@ -1,0 +1,272 @@
+.reservation #ui-datepicker-div {
+    background: white;
+    color: black;
+    font-family: Arial, Calibri, Helvetica, sans-serif;
+    z-index: 9999 !important;
+    box-shadow: 0 1px 6px 1px rgba(102,102,102,.15);
+    padding: 0;
+    min-width:300px;
+}
+.reservation #ui-datepicker-div table {
+min-width: 300px;
+}
+.reservation .ui-datepicker-header{
+    background: #8c8b8b;
+}
+.reservation .ui-datepicker-calendar td{
+    padding: 10px;
+}
+.reservation #ui-datepicker-div a {
+    font-family: Arial, Calibri, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+    color: #2E2E2E;
+    text-align: center;
+}
+
+.reservation .ui-state-disabled {
+    color: rgba(68, 68, 68, 0.48);
+    font-size: 15px;
+    font-weight: 700;
+    text-align: center;
+    color: #cfcfcf;
+}
+
+
+.reservation .list span {
+    font-size: 20px;
+    line-height: 30px;
+    padding: 0 5px;
+    text-align: center;
+}
+.reservation .ui-icon, .ui-widget-content .ui-icon, .ui-widget-header .ui-icon {
+    background-image: url("../img/ui-icons_444444_256x240.png");
+}
+
+.reservation .ui-icon-circle-triangle-e {
+    float: right;
+    background-position: -48px -192px;
+    margin-right: 10px;
+}
+
+.reservation .ui-icon-circle-triangle-w {
+    background-position: -80px -192px;
+    float: left;
+    margin-left: 10px;
+}
+
+.reservation .ui-icon {
+    color: transparent;
+    width: 16px;
+    height: 16px;
+    display: block;
+    margin-top: 10px;
+}
+
+.reservation .ui-datepicker-title {
+    text-align: center;
+    font-family: Arial, Calibri, Helvetica, sans-serif;
+    color: black;
+    font-size: 19px;
+    font-weight: 700;
+    padding: 8px;
+    margin: 0 0 0 5px;
+    text-transform: capitalize;
+}
+.reservation  .ui-datepicker-calendar thead {
+    background: #F1F1F1;
+}
+.reservation  .ui-datepicker-calendar thead th{
+    padding: 10px;
+}
+.reservation .field__item {
+    display: none;
+
+}
+
+.reservation .field__item input {
+    display: none;
+
+}
+
+.reservation .form__field {
+    position: relative;
+}
+.reservation .form__field--date .field__item-label:before{
+    content:'';
+    display: inline-block;
+    background: url('../img/calendar.svg');
+    background-size: contain;
+    width:15px;
+    height:15px;
+    vertical-align: middle;
+    margin-right: 5px;
+
+}
+.reservation-form {
+    width: 100%;
+    background: #F1F1F1;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.reservation-form .form__input {
+    width: 100%;
+    background: white;
+    border:none;
+    color: black;
+    font-weight: 300;
+    font-family: Arial, Calibri, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    cursor:pointer;
+}
+.reservation .form__submit {
+    display: block;
+    float:right;
+    padding: 18px 20px;
+    background: #8c8b8b;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+    width: 100%;
+    transition: 0.5s;
+    font-weight: bold;
+}
+.reservation .form__submit:hover {
+    background: rgba(140,139,139,0.5);
+    color: white;
+    transition: 0.5s;
+}
+.reservation {
+    float: right;
+    width: 100%;
+    max-width: 410px;
+}
+@media screen and (max-width: 1024px) {
+    .reservation {
+        float: none;
+        margin: auto;
+        margin-bottom: 40px;
+    }
+}
+.reservation .fields__item {
+    width: 100%;
+    float: left;
+    padding: 12px;
+    box-sizing: border-box;
+    border: solid 1px #C6C6C6;
+    background: white;
+    margin-bottom: 10px;
+    text-align: center;
+    cursor:pointer;
+}
+
+.reservation .fields__item:focus {
+    box-shadow: 0 0 5px #C6C6C6;
+    border: 1px solid #C6C6C6;
+}
+.reservation .form__input__container {
+    display: inline-block;
+    width: 100%;
+}
+#adults, #children, #infants, #children2 {
+    display: none;
+}
+
+.list {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.list .field__item-button {
+    transition: 0.5s;
+}
+
+.list .field__item-button .material-icons {
+    font-size: 15px;
+    line-height: 15px;
+    border: solid 1px black;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+.list .field__item-button:hover {
+    color: #E18061;
+    transition: 0.5s;
+}
+
+.list .field__item-button:hover .material-icons {
+    color: #E18061;
+    border: 1px solid #e18061;
+    transition: 0.5s;
+}
+
+.reservation .field__item {
+    box-sizing: border-box;
+    border: solid 1px #C6C6C6;
+    background: white;
+    color: black;
+    font-weight: 300;
+    font-family: Arial, Calibri, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 18px;
+}
+.reservation a{
+    user-select: none;
+    cursor:pointer;
+}
+.reservation .field__item-label {
+    display: block;
+    font-size:16px;
+}
+.reservation  .field__item-side-label {
+    font-size: 75%;
+}
+.reservation  .field__item-button--plus{
+    width: 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    background: #8c8b8b;
+    border-radius: 50%;
+}
+.reservation  .field__item-button--plus:after{
+    content: '+';
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 26px;
+    margin-left:-1px;
+}
+.reservation  .field__item-button--plus:hover{
+    background: rgba(140,139,139,0.5);
+}
+.reservation  .field__item-button--minus{
+    width: 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    display: inline-block;
+    vertical-align: text-bottom;
+    background: #8c8b8b;
+    border-radius: 50%;
+}
+.reservation  .field__item-button--minus:after{
+    content: '−';
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    vertical-align: middle;
+    line-height: 26px;
+}
+.reservation  .field__item-button--minus:hover{
+    background: rgba(140,139,139,0.5);
+}
