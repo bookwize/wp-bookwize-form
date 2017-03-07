@@ -90,7 +90,12 @@ class Bookwize_Form_Public
          * class.
          */
         if(get_option('bwf_disable_css') !== '1') {
-            wp_enqueue_style($this->bookwize_form, $this->getBasePublicUrl() . '/css/bookwize-form.css', array(), $this->version, 'all');
+          if (!empty(get_option('bwf_horizontal'))) {
+              wp_enqueue_style($this->bookwize_form, $this->getBasePublicUrl() . '/css/bookwize-horizontal-form.css', array(), $this->version, 'all');
+          }
+            else{
+                wp_enqueue_style($this->bookwize_form, $this->getBasePublicUrl() . '/css/bookwize-form.css', array(), $this->version, 'all');
+            }
         }
     }
 

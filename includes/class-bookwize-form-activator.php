@@ -31,6 +31,8 @@ class Bookwize_Form_Activator {
 	 */
 	public static function activate() {
 
+		update_option( 'bwf_theme', 'bookwize-theme-default' );
+
 	}
 
 }

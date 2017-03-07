@@ -71,7 +71,7 @@ class Bookwize_Form
     {
 
         $this->bookwize_form = 'bookwize-form';
-        $this->version = '1.0.0';
+        $this->version = '1.4';
 
         $this->load_dependencies();
         $this->set_locale();
@@ -158,6 +158,10 @@ class Bookwize_Form
             $class = str_replace('_', '-', $class);
             include plugin_dir_path(dirname(__FILE__))  . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'class-bookwize-form-'.$class . '.php';
         });
+
+        require_once plugin_dir_path(dirname(__FILE__)) . '/admin/class-bookwize-form-admin.php';
+        require_once plugin_dir_path(dirname(__FILE__)) . '/public/class-bookwize-form-public.php';
+        
         $this->loader = new Bookwize_Form_Loader();
     }
 

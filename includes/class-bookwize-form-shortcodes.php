@@ -26,6 +26,6 @@ class Bookwize_Form_Shortcodes
         foreach ($argKeys as $argKey) {
             $args[$argKey] = get_option($argKey);
         }
-        return bookwize_form_render('bookwize-form-template', shortcode_atts($args, $atts));
+        return bwf_render('bookwize-form-template', shortcode_atts($args, $atts));
     }
 }

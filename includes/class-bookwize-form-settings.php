@@ -16,9 +16,27 @@ class Bookwize_Form_Settings
                 'name' => 'auth',
                 'section' => ['auth_section', 'Authentication', '*Information provided by Bookwize Support Team <a href="https://www.bookwize.com/" target="_blank">www.bookwize.com</a> - <a href="mailto:support@bookwize.com" target="_blank">support@bookwize.com</a>'],
                 'settings' => [
-                    ['bwf_api_key', 'API Key', 'text', 'Unique API Key (eg: 2ufjuh44loo2beddddue9)'],
-                    ['bwf_hotel_id', 'Hotel Id', 'text', 'Unique Hotel Id (eg: 1)'],
-                    ['bwf_hotel_url', 'Hotel Url', 'text', 'https://your-hotel.bookwize.com/v2'],
+                    ['bwf_api_key', 'API Key', 'text', 'Unique API Key (eg: oxulhg0rlkkbacgz21m1h)'],
+                    ['bwf_hotel_id', 'Hotel Id', 'text', 'Unique Hotel Id (eg: 264)'],
+                    ['bwf_hotel_url', 'Hotel Url', 'text', 'https://presentation.bookwize.com'],
+                ]
+            ],
+            [
+                'name' => 'themes',
+                'section' => ['theme_section', 'Themes', '*Choose one of the default themes'],
+                'settings' => [
+                    ['bwf_theme', 'Choose Theme', 'select', 'Default theme',
+                        [
+                            'options' => [
+                                // key points to css file name
+                                'bookwize-theme-default' => 'horizontal default theme',
+                                'bookwize-theme-1' => 'horizontal theme 1',
+                                'bookwize-theme-2' => 'horizontal theme 2',
+                                'bookwize-vertical-theme-1' => 'vertical theme 1',
+                            ],
+                            // 'empty' => true
+                        ]
+                    ],
                 ]
             ],
             [
@@ -32,6 +50,8 @@ class Bookwize_Form_Settings
                     ['bwf_button_color', 'Button Color ', 'color'],
                     ['bwf_submit_button_color', 'Submit Button Color ', 'color'],
                     ['bwf_small_edition', 'Show only check-in and check-out fields', 'checkbox'],
+                    ['bwf_promo_code', 'Show Promo Code', 'checkbox'],
+                    ['bwf_board', 'Show Board', 'checkbox'],
                     ['bwf_custom_style', 'Add your custom css', 'textarea', 'eg: .reservation .form__submit {color:red;}'],
                     ['bwf_disable_css', "Disable plugin's css", 'checkbox'],
                 ]
@@ -43,7 +63,7 @@ class Bookwize_Form_Settings
     {
         foreach ($this->settings as $setting) {
             foreach ($setting['settings'] as $option) {
-              $setarray[] = $option[0];
+                $setarray[] = $option[0];
             }
         }
         return $setarray;
@@ -145,7 +165,9 @@ class Bookwize_Form_Settings
                 break;
             case 'select':
                 echo '<select  name="' . $field[0] . '" id="' . $field[0] . '" class="code">';
-                echo '<option value=""></option>';
+                if (isset($field[4]['empty'])) {
+                    echo '<option value=""></option>';
+                }
                 if (isset($field[4]['options'])) {
                     foreach ($field[4]['options'] as $value => $option) {
                         echo '<option value="' . $value . '"' . selected($value, get_option($field[0]), false) . '>' . $option . '</option>';
