@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              http://bookwize.com
- * @since             1.0.0
+ * @since             1.4
  * @package           Bookwize_Form
  *
  * @wordpress-plugin
  * Plugin Name:       Bookwize Form
  * Plugin URI:        http://bookwize.com
  * Description:       bookwize booking form
- * Version:           1.0.0
+ * Version:           1.4
  * Author:            Bookwize
  * Author URI:        www.bookwize.com
  * License:           GPL-2.0+
@@ -77,7 +77,7 @@ require plugin_dir_path(__FILE__) . 'includes/class-bookwize-form.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since    1.1.0
  */
 function run_bookwize_form()
 {

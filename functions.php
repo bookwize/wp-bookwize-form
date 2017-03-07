@@ -256,8 +256,8 @@ if (!function_exists('bwf_array_merge_recursive_distinct')) {
     }
 }
 
-if (!function_exists('bookwize_form_prefix')) {
-    function bookwize_form_render($file = '', $data = [])
+if (!function_exists('bwf_render')) {
+    function bwf_render($file = '', $data = [])
     {
         if ($file === '') {
             return false;
@@ -279,7 +279,8 @@ if (!function_exists('bookwize_form_prefix')) {
 
         $plugin_path = plugin_dir_path(__FILE__);
         $paths = array(
-            $plugin_path . DIRECTORY_SEPARATOR . 'public' . DIRECTORY_SEPARATOR
+            $plugin_path . '/public/',
+            $plugin_path . '/public/partials/',
         );
 
         foreach ($paths as $path) {
