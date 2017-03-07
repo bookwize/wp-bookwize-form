@@ -11,6 +11,7 @@ jQuery(document).ready(function () {
         var $lang = jQuery('html').attr('lang');
         var $apikey = $reservationForm.attr('data-key');
         var $id = $reservationForm.attr('data-id');
+
 //api call
         jQuery.ajax({
             type: 'GET',
@@ -52,12 +53,17 @@ jQuery(document).ready(function () {
                 if (guestTypes.length === 0) {
                     guestTypes = [];
                 }
+                var boardTypes = data['info']['boardTypes'];
+                if (boardTypes.length === 0) {
+                    boardTypes = [];
+                }
                 return ({
                     first: data['conditions'].minCheckInDate,
                     second: coDate,
                     maxGuests: maxGuests,
                     adults: defaultAdults,
                     guestArray: guestTypes,
+                    boardArray: boardTypes,
                     maxStay: maxStay
                 });
             }
@@ -83,6 +89,17 @@ jQuery(document).ready(function () {
                     y++;
                 }
             });
+
+            jQuery.each(input.boardArray, function (i, val) {
+                var inputs = ' <option value="' + val.boardType + '" >' + val.name + '</option>';
+                jQuery(".board").append(inputs);
+            });
+            if (jQuery('#couponCode').attr('data-enable') === 'true') {
+                jQuery('#couponCode').show();
+            }
+            if (jQuery('#board').attr('data-enable') === 'true') {
+                jQuery('#board').show();
+            }
         }
 
 //create datepicker
@@ -92,6 +109,10 @@ jQuery(document).ready(function () {
             checkInDate.attr('value', availableDates.first);
             checkOutDate.attr('value', availableDates.second);
             $reservationForm.attr('max-guests', availableDates.maxGuests);
+            if (availableDates.adults > 0) {
+                jQuery('#guests').show();
+                jQuery('.guests__value').append(availableDates.adults);
+            }
             $reservationForm.attr('max-stay', availableDates.maxStay);
             if ($lang.length > 0) {
                 jQuery.datepicker.setDefaults(jQuery.datepicker.regional[$lang]);
@@ -151,6 +172,7 @@ jQuery(document).ready(function () {
                 currentValue--;
                 input.val(currentValue);
                 jQuery(this).siblings('.value').text(currentValue);
+                jQuery('.guests__value').text(parseInt(jQuery('.guests__value').text()) - 1);
             }
         });
 // add quests
@@ -171,11 +193,13 @@ jQuery(document).ready(function () {
                 ++currentValue;
                 input.val(currentValue);
                 jQuery(this).siblings('.value').text(currentValue);
+                jQuery('.guests__value').text(parseInt(jQuery('.guests__value').text()) + 1);
             }
             if (input.attr('name') === 'infants' && currentValue < input.attr('max')) {
                 ++currentValue;
                 input.val(currentValue);
                 jQuery(this).siblings('.value').text(currentValue);
+                jQuery('.guests__value').text(parseInt(jQuery('.guests__value').text()) + 1);
 
             }
         });
@@ -207,5 +231,41 @@ jQuery(document).ready(function () {
 
             }
         });
+        //cross domain tacking
+        function HP_UpdateUrl() {
+            ga(function (tracker) {
+                var linkerParam = tracker.get('linkerParam');
+                jQuery('.linkerParam').val(linkerParam);
+            });
+
+        }
+
+        //count  visible section for horizontal version
+        jQuery(window).load(function () {
+            var visible = 0;
+            jQuery('.fields__wrapper').children(':visible').each(function () {
+                visible = visible + 1;
+            });
+            var $width = jQuery('.reservation-form').width() / visible - 5 + 'px';
+            if (jQuery('.reservation-form').attr('data-vertical') === '1') {
+                jQuery('.fields__wrapper').children(':visible').each(function () {
+
+                    jQuery(this).width($width);
+                });
+            }
+        });
+
+
+        jQuery(document).click(function () {
+            jQuery('.guests__wrapper').removeClass('opened');
+            jQuery('.guests__value').removeClass('opened');
+        });
+
+        jQuery("#guests").click(function (event) {
+            event.stopPropagation();
+            jQuery('.guests__wrapper').addClass('opened');
+            jQuery('.guests__value').addClass('opened');
+        });
+
     }
 });
