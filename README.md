@@ -1,7 +1,7 @@
 # Bookwize Hotel Booking Form Vertical
 * Contributors: Bookwize
 * Tags: bookwize, booking system, booking form, hotel booking engine, booking, system, engine, bookings, hotel, accommodations
-* Tested up to: 4.7
+* Tested up to: 4.8
 
 # Description
 This Plugin will help you to easily connect your Bookwize hotel booking system with your WordPress website or blog. The bookwize booking form will display a form for users to choose dates and guests and check the availability of your hotel.
