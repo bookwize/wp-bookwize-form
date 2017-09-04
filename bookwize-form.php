@@ -9,14 +9,14 @@
  * that starts the plugin.
  *
  * @link              http://bookwize.com
- * @since             1.4
+ * @since             1.6
  * @package           Bookwize_Form
  *
  * @wordpress-plugin
  * Plugin Name:       Bookwize Form
  * Plugin URI:        http://bookwize.com
  * Description:       bookwize booking form
- * Version:           1.4
+ * Version:           1.6
  * Author:            Bookwize
  * Author URI:        www.bookwize.com
  * License:           GPL-2.0+

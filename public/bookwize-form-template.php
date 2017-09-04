@@ -133,6 +133,7 @@ if (preg_match('/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|
                    placeholder="<?php echo __('Coupon Code', 'bookwize-form'); ?>">
         </div>
         <input type="hidden" name="r" data-guests/>
+		 <input type="hidden" name="lang" value="" class="lang"/>
         <input type="hidden" name="linkerParam" value="" class="linkerParam"/>
         <div class="form__input__container">
             <input type="submit" class="form__submit" value="<?php echo __('Book Now', 'bookwize-form'); ?>"/>

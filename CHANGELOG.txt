@@ -30,3 +30,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## 1.4 - 2016-12-22
 ### Changed
 - Cross-domain Tracking
+
+## 1.6 - 2017-6-20
+### Changed
+- parseInt values
+
+## 1.6 - 2017-8-3
+### Changed
+- change arrows

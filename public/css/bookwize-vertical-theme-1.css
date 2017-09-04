@@ -351,7 +351,7 @@
 }
 
 .reservation .guests__value:after {
-    content: '\2B9F';
+    content: '\21E9';
     display: inline-block;
     color: #8c8b8b;
     font-weight: bold;
@@ -366,7 +366,7 @@
 }
 
 .reservation .guests__value.opened:after {
-    content: '\2B9D';
+    content: '\21E7';
 
 }
 

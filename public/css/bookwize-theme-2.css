@@ -273,7 +273,7 @@
     background: transparent;
 }
 .reservation  .field__item-button--plus:after{
-    content: '\2B9D';
+    content: '\21E7';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -294,7 +294,7 @@
     background: transparent;
 }
 .reservation  .field__item-button--minus:after{
-    content: '\2B9F';
+    content: '\21E9';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -332,7 +332,7 @@
     font-size:16px;
 }
 .reservation #board:after {
-    content: '\2B9F';
+    content: '\21E9';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -376,7 +376,7 @@
     display: inline-block;
 }
 .reservation .guests__value:after{
-    content: '\2B9F';
+    content: '\21E9';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -388,7 +388,7 @@
     right:5px;
 }
 .reservation .guests__value.opened:after{
-    content: '\2B9D';
+    content: '\21E7';
 
 }
 .reservation .guests__wrapper .fields__item{

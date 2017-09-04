@@ -125,7 +125,7 @@
 }
 
 .reservation .fields__item:first-child .form__field--date:first-child:after {
-    content: '\2B9E';
+    content: '\21E8';
     display: inline-block;
     position: absolute;
     right: -5px;
@@ -139,7 +139,7 @@
         right: 50%;
         bottom: -20px;
         transform: inherit;
-        content: '\2B9F';
+        content: '\21E9';
         top: inherit;
     }
 }
@@ -307,7 +307,7 @@
 }
 
 .reservation .field__item-button--plus:after {
-    content: '\2B9D';
+    content: '\21E7';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -331,7 +331,7 @@
 }
 
 .reservation .field__item-button--minus:after {
-    content: '\2B9F';
+    content: '\21E9';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -374,7 +374,7 @@
 }
 
 .reservation #board:after {
-    content: '\2B9F';
+    content: '\21E9';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -419,7 +419,7 @@
 }
 
 .reservation .guests__value:after {
-    content: '\2B9F';
+    content: '\21E9';
     display: inline-block;
     color: white;
     font-weight: bold;
@@ -430,7 +430,7 @@
 }
 
 .reservation .guests__value.opened:after {
-    content: '\2B9D';
+    content: '\21E7';
 
 }
 

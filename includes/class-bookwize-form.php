@@ -71,7 +71,7 @@ class Bookwize_Form
     {
 
         $this->bookwize_form = 'bookwize-form';
-        $this->version = '1.4';
+        $this->version = '1.6';
 
         $this->load_dependencies();
         $this->set_locale();

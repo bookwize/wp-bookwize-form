@@ -115,6 +115,7 @@ jQuery(document).ready(function () {
             }
             $reservationForm.attr('max-stay', availableDates.maxStay);
             if ($lang.length > 0) {
+				 jQuery('.lang').val($lang);
                 jQuery.datepicker.setDefaults(jQuery.datepicker.regional[$lang]);
             } else {
                 jQuery.datepicker.setDefaults(jQuery.datepicker.regional['en']);
@@ -168,7 +169,7 @@ jQuery(document).ready(function () {
                 }
             });
 
-            if (currentValue > minVal) {
+            if (parseInt(currentValue) > parseInt(minVal)) {
                 currentValue--;
                 input.val(currentValue);
                 jQuery(this).siblings('.value').text(currentValue);
@@ -189,13 +190,13 @@ jQuery(document).ready(function () {
             });
             var totalGuestsVal = parseInt($reservationForm.attr('max-guests'), 10);
             var guests = parseInt(adults, 10) + parseInt(children, 10);
-            if (guests < totalGuestsVal && input.attr('name') !== 'infants' && currentValue < input.attr('max')) {
+            if (guests < totalGuestsVal && input.attr('name') !== 'infants' && parseInt(currentValue) < parseInt(input.attr('max'))) {
                 ++currentValue;
                 input.val(currentValue);
                 jQuery(this).siblings('.value').text(currentValue);
                 jQuery('.guests__value').text(parseInt(jQuery('.guests__value').text()) + 1);
             }
-            if (input.attr('name') === 'infants' && currentValue < input.attr('max')) {
+            if (input.attr('name') === 'infants' && parseInt(currentValue) < parseInt(input.attr('max'))) {
                 ++currentValue;
                 input.val(currentValue);
                 jQuery(this).siblings('.value').text(currentValue);
